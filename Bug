@@ -1,0 +1,53 @@
+Bug : The calculator's history should not be visible.
+Step to reproduce :Open the calculator application and the display to that the calculator's history is visible.
+
+
+Bug: Handling Multiple Numbers for Addition
+Steps to reproduce: 1)Open the calculator application or device.
+                    2)Enter multiple numbers intended for addition, for example: 5, 6, 7, 8, 9.
+                    3)Perform the addition operation.
+                    4)Verify the result displayed by the calculator for accuracy.
+
+
+Bug: When we input the sequence 5+6+6+6+6+8+7, it should display the same number.
+Steps to reproduce: 1)the issue where the input sequence "5+6+6+6+6+8+7" doesn't display the correct number:
+                    2)Input the sequence "5+6+6+6+6+8+7" into the designated input field or calculator.
+                    3)Observe the displayed result to verify if it matches the expected outcome.
+
+
+Bug:  multiple operator should be not accepted by calculator or display incorrect result
+Steps to reproduce :1)Enter multiple operators consecutively into the calculator, such as "+", "-", "*", "/", etc.
+                    2)Observe the calculator's response.
+                    3)Verify that the calculator does not accept or process multiple operators in sequence and ideally displays an error message or ignores the input.
+                     for example:
+                     Inputting "5++3" should yield an expected result that does not accept the repeated "++" operator.
+
+Bug: We can't delete single digit from more than one digit number.( it will delete all number)
+Steps to reproduce:1)Enter a multi-digit number into the calculator.
+                   2)Attempt to delete a single digit from the entered number.
+                   3)Observe that instead of deleting the intended single digit, the entire number is cleared from the display.
+
+
+Bug:When we enter negative and positive number then result is NAN
+Steps to reproduce:1)Input a negative number and a positive number into the calculator, e.g., -5 and 3.
+                   2)Perform the addition operation.
+                   3)Verify that the result displayed is 'NaN' (Not a Number) instead of the expected sum, which should be 2.
+
+
+Bug: When we enter numbers in loop then application size
+Steps to reproduce:1)Continuously input numbers into the calculator in a loop.
+                   2)Monitor the application size during this process.
+                   3)Note any increase in the application size as numbers are entered repeatedly.
+
+
+Bug: When multiple numbers are entered, the addition operation should display the sum of those numbers.
+Steps to reproduce:1)Enter multiple numbers into the calculator.
+                   2)Initiate the addition operation.
+                   3)Verify that the result displayed on the calculator screen is the sum of the entered numbers.
+
+Bug:Pressing 0 should only occur once, whereas in our application, pressing 0 may happen multiple times.
+Steps to reproduce:1)When entering '0', ensure it is accepted only once and not multiple times.
+
+
+Bug- two operator doesn't work not get accurate result.
+Steps to reproduce: when we enter (-5)+(-6) application should display correct result
