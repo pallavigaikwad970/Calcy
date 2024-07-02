@@ -41,8 +41,10 @@ public class CalculatorModule {
              wAction.click(btn_0);
           //  driver.findElement(btn_0).click();
         } else if (number == 1) {
-           driver.findElement(btn_1).click();
+             wAction.click(btn_1);
+          // driver.findElement(btn_1).click();
         } else if (number == 2) {
+             wAction.click(btn_0);
             driver.findElement(btn_2).click();
         } else if (number == 3) {
             driver.findElement(btn_3).click();
