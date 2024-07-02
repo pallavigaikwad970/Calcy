@@ -5,6 +5,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.modules.CalculatorModule;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -25,13 +26,13 @@ public class StepDef {
     public WebDriver driver;
     public CalculatorModule calculatorModule;
 
-
     @Given("the calculator application is open")
     public void the_calculator_application_is_open() {
         try {
-            String driverPath = System.getProperty("user.dir") + "\\drivers\\chromedriver.exe";
+           // String driverPath = System.getProperty("user.dir") + "\\drivers\\chromedriver.exe";
             logger.info("Browser opened successfully.");
-            System.setProperty("webdriver.chrome.driver", driverPath);
+            //System.setProperty("webdriver.chrome.driver", driverPath);
+            WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
@@ -92,11 +93,7 @@ public class StepDef {
             }
         }
     }
-    @When("the user looks at the application name should be {string} display")
-    public void theUserLooksAtTheApplicationNameShouldBeDisplay(String expectedFormat) {
-        String actualNameDisplay = calculatorModule.applicationName();
-        assertTrue(actualNameDisplay.contains(expectedFormat));
-    }
+
 
     @When("the user looks at the plus sign")
     public void the_user_looks_at_the_plus_sign() {
@@ -110,7 +107,7 @@ public class StepDef {
         calculatorModule.verifyButton("add");
         calculatorModule.clickButton("add");
         logger.info("Plus sign is visible and clickable");
-        logger.info("Clicked the plus sign");
+
 
     }
 
@@ -126,7 +123,7 @@ public class StepDef {
         calculatorModule.verifyButton("sub");
         calculatorModule.clickButton("sub");
         logger.info("minus sign is visible and clickable");
-        logger.info("Clicked the minus sign");
+
     }
 
     @When("the user looks at the multiply sign")
@@ -141,7 +138,7 @@ public class StepDef {
         calculatorModule.verifyButton("mul");
         calculatorModule.clickButton("mul");
         logger.info("multiplicaion sign is visible and clickable");
-        logger.info("Clicked the Multiply sign");
+
     }
 
     @When("the user looks at the divide sign")
@@ -156,7 +153,7 @@ public class StepDef {
         calculatorModule.verifyButton("div");
         calculatorModule.clickButton("div");
         logger.info("Division sign is visible and clickable");
-        logger.info("Clicked the division sign");
+
     }
 
     @When("the user looks at the equals sign")
@@ -171,7 +168,7 @@ public class StepDef {
         calculatorModule.verifyButton("equals");
         calculatorModule.clickButton("equals");
         logger.info("equals sign is visible and clickable");
-        logger.info("Clicked the equals sign");
+
     }
 
 

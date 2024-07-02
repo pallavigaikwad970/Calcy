@@ -6,16 +6,21 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import utils.WebAction;
+import utils.WebVerification;
 
 import static org.pageobject.CalculatorScreenPageObject.*;
 
 public class CalculatorModule {
     private static final Logger logger = LoggerFactory.getLogger(CalculatorModule.class);
     public WebDriver driver;
+    public WebAction wAction;
+    public WebVerification wVerification;
     public CalculatorModule(WebDriver driver) {
         this.driver = driver;
+        wAction = new WebAction(this.driver);
+        wVerification = new WebVerification();
     }
-
     /**
      * This method is use to enter number .
      * If user providing number more then 9999 and less then 0
@@ -32,8 +37,9 @@ public class CalculatorModule {
         if (number < 0 || number > 9999) {
             throw new InvalidCalculatorNumberException("Invalid number: " + number);
         }
-        if (number == 0) {
-            driver.findElement(btn_0).click();
+         if (number == 0) {
+             wAction.click(btn_0);
+          //  driver.findElement(btn_0).click();
         } else if (number == 1) {
            driver.findElement(btn_1).click();
         } else if (number == 2) {
@@ -55,7 +61,6 @@ public class CalculatorModule {
         } else {
             throw new InvalidCalculatorNumberException("Invalid number: " + number);
         }
-
     }
     /**
      * This method is use to click button .
@@ -145,15 +150,6 @@ public class CalculatorModule {
         return result;
     }
 
- public String applicationName() {
-        WebElement viewApplicationName = driver.findElement(name);
-        return viewApplicationName.getText();
-     }
-
- public void appTitle() {
-        WebElement viewAppTitle = driver.findElement(title);
-     viewAppTitle.getSize();
- }
 
     public boolean isEnabled(By by) {
         return driver.findElement(by).isEnabled();
