@@ -1,1 +1,1 @@
-# Calcy
+This is basic calculator project
