@@ -30,8 +30,5 @@ public class CalculatorScreenPageObject {
     public static By btn_dot = By.xpath("//input[@value='.']");
     public static By btn_equals = By.xpath("//input[@value ='=']");
     public static By btn_addition = By.xpath("//input[@value='+']");
-    public static By title = By.xpath("/html/head/title");
-    public static By name = By.xpath("//table[@id=\"calculator\"]//td[contains(text(), \"Tech Elliptica Basic Calculator\")]");
-    public static By logo = By.xpath("//table[@style=\"border:0px;margin-top:100px;text-align:center;\"]//img[contains(@src, \"logo\")]\n");
 
 }

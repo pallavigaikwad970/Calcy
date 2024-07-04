@@ -37,7 +37,6 @@ Feature: Addition of Numbers
   @Sanity @add_negative
   Scenario Outline: To verify if the calculator can correctly add two negative numbers <TestcaseName>
      When the user enters the <Negative1> number
-     #And the user hit "+" the addition operator
      And user hit "+" operator
      And the user enters the <Negative2> number
      And the user hit the equals "=" button
