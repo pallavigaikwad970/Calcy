@@ -11,9 +11,10 @@ public class WebVerification {
         Assert.assertTrue(msg, actual);
         if(actual) {
             logger.info(msg);
-        }else{
+        }else {
             logger.error(msg + " got error");
         }
+
     }
 }
 
